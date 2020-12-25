@@ -1,38 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+body {
+  background: #c7c7c7;
+  font-family: 'Poppins', sans-serif;
+}
+
 .App {
+  margin: auto;
+}
+
+h2 {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.input-box {
+  padding: 1rem;
+  grid-area: input;
+  justify-self: right;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.qr {
+  grid-area: qr;
+  justify-self: left;
+  padding: 1rem;
+}
+
+input {
+  font-family: 'Poppins', sans-serif;
+  width: 256px;
+  height: 2rem;
+  border-radius: 5px;
+  outline: none;
+  border-style: none;
+  padding: 0.2rem 0.4rem;
+  transition: all 0.3s ease-in-out;
+}
+
+input:focus {
+  box-shadow: 0 42.3px 36.9px rgba(0, 0, 0, 0.072),
+    0 4px 2.2px rgba(0, 0, 0, 0.034), 0 12.7px 5.3px rgba(0, 0, 0, 0.048),
+    0 22.5px 10px rgba(0, 0, 0, 0.06), 0 42.3px 36.9px rgba(0, 0, 0, 0.072),
+    0 90.8px 65.4px rgba(0, 0, 0, 0.086), 0 150px 100px rgba(0, 0, 0, 0.12);
+}
+
+.container {
+  margin: 10rem 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 'input qr';
+  text-align: center;
+}
+
+@media (max-width: 40rem) {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 'qr' ' input';
+    justify-items: center;
+  }
+
+  .input-box {
+    padding-top: 2rem;
+    justify-self: center;
+  }
+
+  .qr {
+    justify-self: center;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+footer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h5 {
+  text-align: center;
 }
